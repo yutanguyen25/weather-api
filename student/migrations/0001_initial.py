@@ -12,15 +12,14 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Description',
+            name='Student',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('weather_description', models.IntegerField(choices=[(0, 'Sunny'), (1, 'Rain'), (2, 'Cloudy'), (3, 'Snow')], default=0)),
-                ('temperature', models.FloatField()),
-                ('created_on', models.DateTimeField(auto_now_add=True)),
+                ('student_reg_number', models.TextField(unique=True)),
+                ('student_name', models.TextField()),
+                ('student_email', models.TextField()),
+                ('student_mobile', models.TextField(null=True)),
+                ('created_at', models.DateTimeField(auto_now=True)),
             ],
-            options={
-                'ordering': ['-created_on'],
-            },
         ),
     ]
